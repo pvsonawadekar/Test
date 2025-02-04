@@ -1,0 +1,150 @@
+y = 1;
+x = "Pratik";
+#print(x);
+#print(type(y)); #type is ussed to check the type of the variable.
+#print(type(x)); #type is ussed to check the type of the variable.
+
+#if = 3; #a variable name cannot be a python keyword.
+#print(if); #a variable name cannot be a python keyword. 
+
+#Many Values to Multiple Variables
+x, y, z = "Apple", "Mango", "Pomegranete";
+#print(x);
+#print(y);
+#print(z);
+#print("\n");
+#One Value to Multiple Variables
+x = y = z = "Apple";
+"""
+print(x);
+print(y);
+print(z);
+print("\n");
+"""
+#Assign array values to variables
+fruits = ["Apple", "Mango", "Orange"];
+x, y, z = fruits;
+"""
+print(x);
+print(y);
+print(z);
+"""
+
+#Output variables
+x = 7;
+y = "Pratik";
+z = " Keep up the good work.";
+
+#print(x, y);
+#print(y + z);
+"""
+for i in range(6):
+    print(i+1);
+"""
+"""
+for x in "banana":
+    print(x);
+"""
+"""
+text = " 
+Python is really a great programming language.One must learn it to upgrade their skill sets.";
+print ("learn" in text);
+"""
+"""
+text = input("Enter a string");
+word = input("Enter the word to find in the given string.");
+
+verify = word in text;
+
+if verify :
+    print("The word '" +word+ "' exists in the string");
+    print(word[2]);
+    for x in word:
+        print(x);
+else :
+    print("The word " +word+ " does'nt exists in the string");
+"""
+#Bubble Sort
+sortData = [2,0,4,7,9,6,8];
+length = len(sortData);
+for i in range(length):
+    for j in range(0, length-i-1):
+        #print(sortData[j]);
+        if sortData[j+1] < sortData[j]:
+            sortData[j], sortData[j+1] = sortData[j+1], sortData[j];
+print(sortData);
+
+
+
+
+
+class Test:
+    def __init__(self, unsortedArray):
+        self.unsortedArray = unsortedArray;
+        print("The below is the give list of Unsorted Array : ");
+        print(unsortedArray); 
+    
+    def bubbleSort(self):
+        n = len(self.unsortedArray);
+        print("After Bubble sort : ");
+        for i in range(n):
+            for j in range(n - i - 1):
+                if self.unsortedArray[j] > self.unsortedArray[j+1]:
+                    self.unsortedArray[j], self.unsortedArray[j+1] = self.unsortedArray[j+1], self.unsortedArray[j];
+
+        print(self.unsortedArray);
+        
+    def selectionSort(self):
+        n = len(self.unsortedArray);
+        print("After Selection sort : ");
+        for i in range(n):
+            for j in range(i+1, n):
+                if self.unsortedArray[j] < self.unsortedArray[j-1]:
+                    self.unsortedArray[j], self.unsortedArray[j-1] = self.unsortedArray[j-1], self.unsortedArray[j];
+            
+        print(self.unsortedArray);    
+'''
+test = Test([1,9,53,4,4,6,78,2,6,9,44,67]);
+test.bubbleSort();
+test.selectionSort();
+'''
+
+class TestTwo(Test):
+    
+    def __init__(self, newData):
+        self.newData = newData;
+        
+    def inhertBubbleSort(self):
+        newTest = Test(self.newData);
+        newTest.bubbleSort();
+    
+    def inhertSelectionSort(self):
+        newTest = Test(self.newData);
+        newTest.selectionSort();    
+        
+testTwo = TestTwo([0,9,7,5,4,3,2,1]);       
+testTwo.inhertBubbleSort()
+testTwo.inhertSelectionSort()
+
+
+######Insertion Sort########
+def insertionSort(unsortedArray):
+    print(unsortedArray);
+    for i in range(1, len(unsortedArray)):
+        j=i;
+        while(unsortedArray[j-1] > unsortedArray[j] and j > 0):
+            print(j);
+            unsortedArray[j-1], unsortedArray[j] = unsortedArray[j], unsortedArray[j-1];
+            j-=1;
+            print(unsortedArray); 
+        
+           
+unsortedArray = [9,8,7,6,5,4,3,2,1];
+insertionSort(unsortedArray);
+
+        
+
+
+    
+
+
